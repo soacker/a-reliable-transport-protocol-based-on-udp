@@ -15,11 +15,18 @@ def realClient():
     data = sock.recv(1024)
     print data
 
+def translate_file(path):
+    f = open(path,'rb')
+    myudp.mySend(f.read())
+    f.close()
+
 def myClient():
     myudp._init('127.0.0.1',8002,'client')
-    data = 'sssssssssssssssdddddddddddddddddddfffffffffffffssssssss'
+
+    data = 'sssssssssssssssdddddddddddddddddddfffffffff657586858475475858ffffssssssss'
     myudp.mySend(data)
 
+    # translate_file('C:\\reverse.pdf')
 
 if __name__ == '__main__':
     myClient()

@@ -1,6 +1,7 @@
 import socket
 import time
-# author : maxsen
+# author : maxin
+# data : 2018-6-7
 # provide a unify interface:
 # for user , in the user level , provide mySend() and myRecv() to send and receive data.
 # for interface , below user level , provide rlSend() and rlRecv() for mySend and myRecv to use.
@@ -123,9 +124,9 @@ def myRecv():
                 sign = 1
                 break
         # 3. send full packet to user buffer
-        buf += ''.join(RecvPacket)
         if sign == 1:
             break
+        buf += ''.join(RecvPacket)
 
     return buf
 

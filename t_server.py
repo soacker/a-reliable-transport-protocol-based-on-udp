@@ -14,10 +14,17 @@ def realServer():
     c_ip_port = (ip,8082)
     sock.sendto('thank you ',c_ip_port)
 
+def recvFile(data):
+    f = open('test.pdf','wb')
+    f.write(data)
+    f.close()
+
 def myServer():
     myudp._init('127.0.0.1',8001,'server')
     data = myudp.myRecv()
     print data
+
+    # recvFile(data)
     pass
 
 
